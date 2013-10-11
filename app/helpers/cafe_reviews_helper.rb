@@ -1,0 +1,2 @@
+module CafeReviewsHelper
+end
