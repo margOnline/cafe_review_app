@@ -1,7 +1,7 @@
 class CafeReviewsController < ApplicationController
 
   def index
-    @cafes - Cafe.all
+    @cafes = Cafe.all
   end
 
 end
