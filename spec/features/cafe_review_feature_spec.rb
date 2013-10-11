@@ -19,10 +19,10 @@ describe 'home page' do
     expect(page).to have_css('a')
   end
 
-  # it 'links to a cafe page' do
-  #   click_link('See reviews')
-  #   expect(page).to have_content('Reviews')
-  # end
+  it 'links to a cafe page' do
+    click_link('See reviews')
+    expect(page).to have_content('Reviews')
+  end
 
 
 end

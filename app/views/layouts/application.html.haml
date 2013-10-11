@@ -1,26 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Cafe Review App</title>
-  <%= stylesheet_link_tag    "application1", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-  <div class="wrapper">
-    <%= render 'layouts/header' %>
-
-    <%= yield %>
-    <div class='push'></div>
-  </div>
-  <%= render 'layouts/footer' %>
-</body>
-</html>
-
-
-
-
-<!-- !!!
+!!!
 %html
   %head
     %title Cafe App
@@ -33,4 +11,10 @@
     %script{src: '/js/jquery.maxlength.min.js'}  
     %script{src: '/js/application.js'}
 
- -->
+  %body
+    .wrapper
+      = render 'layouts/header' 
+      = partial :flash
+      = yield
+      .push
+    = partial :footer
