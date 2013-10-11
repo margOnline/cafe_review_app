@@ -11,72 +11,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131011103045) do
+ActiveRecord::Schema.define(version: 20131011154258) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "answers", force: true do |t|
-    t.boolean  "reply"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "question_id"
-    t.integer  "user_id"
-  end
-
-  add_index "answers", ["question_id"], name: "index_answers_on_question_id", using: :btree
-  add_index "answers", ["user_id"], name: "index_answers_on_user_id", using: :btree
-
-  create_table "caves", force: true do |t|
+  create_table "cafes", force: true do |t|
     t.string   "name"
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "review_id"
   end
 
-  create_table "images", force: true do |t|
-    t.string   "filename"
+  add_index "cafes", ["review_id"], name: "index_cafes_on_review_id", using: :btree
+
+  create_table "reviews", force: true do |t|
+    t.text     "post"
+    t.integer  "rating"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  create_table "questions", force: true do |t|
-    t.string   "query"
-    t.boolean  "solution"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "quizzes", force: true do |t|
-    t.string  "title"
-    t.integer "pass_mark"
-  end
-
-  create_table "responses", force: true do |t|
-    t.integer  "user_id"
-    t.decimal  "score"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "responses", ["user_id"], name: "index_responses_on_user_id", using: :btree
-
-  create_table "users", force: true do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
-    t.string   "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip"
-    t.string   "last_sign_in_ip"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
 end
