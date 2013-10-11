@@ -29,10 +29,7 @@ To create a restaurant review app similar to Yelp or TripAdvisor - an exam to bu
   <li>factory-girl-rails</li>
 </ul>
 <h4>Contributors</h4>
-<ul>
-<li><a href="https://github.com/ecomba">Enrique Comba Riepenhausen</a>
-</li>
-</ul>
+
 <h4>Extensions</h4>
 <li>Implement secure user sign in / sign up</li>
 <li>Ability to edit/delete restaurants and reviews</li>
