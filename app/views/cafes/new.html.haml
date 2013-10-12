@@ -1,0 +1,14 @@
+#cafe-container
+  %h3 Add a new cafe
+  =form_for(:cafe, :url => {:action => 'create'}) do |f|
+    %table{:summary => 'Add cafe form fields'}
+      %tr
+        %td Cafe Name:
+        %td
+          =f.text_field(:name)
+      %tr
+        %td Description:
+        %td
+          =f.text_field(:description)
+    %button
+      =submit_tag('Add Cafe')

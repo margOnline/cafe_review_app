@@ -26,9 +26,9 @@ describe 'home page' do
 
   it 'redirects user to add cafe form when add link is clicked' do
     @cafe = Cafe.create!(name: 'Cafe Nero', description: 'Coffee bar')
-    visit new_cafe(@cafe)
+    visit '/'
     click_link("Add +")
-    page.should have_content('Add a cafe')
+    page.should have_content('Add a new cafe')
   end
 
   xit 'links to a cafe page' do

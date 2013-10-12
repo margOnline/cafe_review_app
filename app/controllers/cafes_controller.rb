@@ -5,7 +5,13 @@ class CafesController < ApplicationController
   end
 
   def new
-    @cafe = Cafe.find(params[:id]) 
+    @cafe=Cafe.new
+  end
+
+  def create
+    @cafe = Cafe.create(params[:id]).permit(:name, :description, :review_id)
+    redirect_to '/' 
   end
 
 end
+
