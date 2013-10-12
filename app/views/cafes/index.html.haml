@@ -4,7 +4,6 @@
   %ul{class: 'listings'}
   - @cafes.each do |cafe|
     %li
-      %a{href: '#'}
-        = cafe.name
+      =link_to(cafe.name, {:controller => 'reviews', :action => 'index', :cafe_id => cafe.id})
       %span{class: 'description'}
         = cafe.description
