@@ -9,8 +9,12 @@ class CafesController < ApplicationController
   end
 
   def create
-    @cafe = Cafe.create(params[:id]).permit(:name, :description, :review_id)
-    redirect_to '/' 
+    @cafe = Cafe.new params[:cafe].permit(:name, :description)
+    if @cafe.save
+        redirect_to '/' 
+    else
+      render 'new'
+    end
   end
 
 end
