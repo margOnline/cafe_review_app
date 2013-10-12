@@ -1,41 +1,21 @@
 require 'spec_helper'
 
-describe 'home page' do
+describe 'Review page' do
 
-  it 'displays a title' do
-    visit '/'
-    expect(page).to have_content 'Green Leaf Reviews'
+  it 'displays a review for a cafe' do
+    visit '/reviews/'
+    expect(page).to have_content 'Reviews'
   end
 
-  it 'displays a list of cafes' do
-    Cafe.create!(name: 'Cafe Nero', description: 'Coffee bar')
-    visit '/'
-    expect(page).to have_css('li')
+  it 'shows a link to add a new review' do
+    visit '/reviews/'
+    expect(page).to have_content 'Add a review'
   end
 
-  it 'shows a link for a cafe' do
-    Cafe.create!(name: 'Cafe Nero', description: 'Coffee bar')
-    visit '/'
-    expect(page).to have_css('a')
+  xit 'redirects a user to a form to add a review' do
+
   end
 
-  it 'shows a link to add a cafe' do
-    visit '/'
-    expect(page).to have_content 'Add +'
-  end
-
-  it 'redirects user to add cafe form when add link is clicked' do
-    @cafe = Cafe.create!(name: 'Cafe Nero', description: 'Coffee bar')
-    visit '/'
-    click_link("Add +")
-    page.should have_content('Add a new cafe')
-  end
-
-  it 'links to a cafe page' do
-    Cafe.create!(name: 'Cafe Nero', description: 'Coffee bar')
-    click_link('Cafe Nero')
-    expect(page).to have_content('Reviews')
-  end
 
 
 

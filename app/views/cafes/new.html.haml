@@ -1,5 +1,6 @@
 .list-container
   %h3 Add a new cafe
+  = error_messages_for(@cafe)
   =form_for(:cafe, :url => {:action => 'create'}) do |f|
     %table{:summary => 'Add cafe form fields'}
       %tr

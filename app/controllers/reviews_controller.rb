@@ -13,27 +13,17 @@ class ReviewsController < ApplicationController
   end
 
   def create
-    @review = Review.new(params[:review])
+    @review = Review.new params[:review].permit(:post, :rating)
     if @review.save
       flash[:notice] = 'Review added'
-      redirect_to(:action => 'list', :cafe_id => @cafe.review_id)
+      redirect_to(:action => 'index', :cafe_id => @review.cafe_id)
+    else
+      render 'new'
     end
   end
 
   def edit
 
-  end
-
-  def update
-    @review = Review.find(params[:id])
-    if @review.update_attributes(params[:review])
-      flash[:notice] = 'Review updated'
-      redirect_to(:action => 'show', :id => @review.id, :cafe_id => @review.cafe_id)
-    else
-      @review.count = Review.count
-      @cafes = Cafe.order('position ASC')
-      render('edit')
-    end
   end
 
   def delete

@@ -8,7 +8,7 @@ describe ReviewsController do
     expect(assigns[:reviews].count).to be > 0
   end
 
-  xit 'saves a new review' do
+  it 'saves a new review' do
     @reviews = Review.all
     lambda {Review.create!(post: 'excellent cafe', rating: 4)
       }.should change(@reviews, :count).by(1)

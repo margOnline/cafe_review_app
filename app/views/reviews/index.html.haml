@@ -1,5 +1,8 @@
 .list-container
-
+  %p
+    = link_to 'Add new review', new_cafe_review_path, :id => 'add-review'
+  .notice
+  = notice
   %p 
   Reviews for  
   = @cafe.name

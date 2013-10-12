@@ -1,0 +1,15 @@
+.list-container
+
+  %h3 Add review for
+  = @cafe.name
+  = error_messages_for(@review)
+  =form_for(:review, :url => {:action => 'create'}) do |f|
+    .add-form
+      %p
+        Review:
+        =f.text_area(:post)
+      %p
+        Rating 1-5, 5 being the best
+        =f.select(:rating, 1..5)
+      %button
+        =submit_tag('Add Review')

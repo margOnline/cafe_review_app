@@ -140,24 +140,28 @@ header #user-links #welcome-message {
   float:right;
   color:#999;
 }
-/* ************* SIGN IN / UP FORMS ************* */
+/* ************* NEW / UPDATE FORMS ************* */
 .form-wrap{
   width:40%;
   margin:80px auto;
 }
 
-.error_msgs {
+.form-errors {
   margin-top:60px;
   margin-left:120px;
+  color: #c00;
+
 }
 
-#errors{
+.errors{
+  font-size: 14px;
+  margin:0 auto 10px;
+}
+
+.error-text{
   list-style: none;
-  margin-left: 30px;
-}
-
-.text-error{
-  color: #b94a48;
+  font-size: 14px;
+  margin-bottom: 10px;
 }
 
 /* ************* FOOTER ************* */
