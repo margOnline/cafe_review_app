@@ -1,7 +1,7 @@
-#cafe-container
+.list-container
 
   %p Click a restaurant to see all its reviews and ratings.
-  %ul{id: 'cafes'}
+  %ul{class: 'listings'}
   - @cafes.each do |cafe|
     %li
       %a{href: '#'}

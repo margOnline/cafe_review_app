@@ -31,8 +31,9 @@ describe 'home page' do
     page.should have_content('Add a new cafe')
   end
 
-  xit 'links to a cafe page' do
-    click_link('See reviews')
+  it 'links to a cafe page' do
+    Cafe.create!(name: 'Cafe Nero', description: 'Coffee bar')
+    click_link('Cafe Nero')
     expect(page).to have_content('Reviews')
   end
 

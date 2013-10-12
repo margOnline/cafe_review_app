@@ -91,26 +91,26 @@ header #user-links #welcome-message {
   text-align: center;
 }
 
-/* ************* PEEPS LIST ************* */
-#cafe-container{
+/* ************* CONTENT LIST ************* */
+.list-container{
   background-color: white;
   margin: 140px;
   box-shadow: 0 0 5px rgba(0,0,0,0.4);
   padding:10px;
 }
 
-#cafe-container p{
+.list-container p{
   font-size: 12px;
   margin:10px 0 10px;
   text-align: center;
 }
 
 
-#cafe-container a{
+.list-container a{
   color:#69B734;
 }
 
-#cafe-container > #cafes {
+.list-container > .listings {
   list-style: none;
 }
 

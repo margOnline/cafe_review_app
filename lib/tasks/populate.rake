@@ -33,7 +33,7 @@ namespace :db do
       ['lots of different home baked goods - all very good', 4, 1]
     ]
     10.times do |n|
-      puts "[DEBUG] creating cafe #{n+1} of 10"
+      puts "[DEBUG] creating review #{n+1} of 10"
       Review.create(post: @reviews[n][0], rating: @reviews[n][1], cafe_id: @reviews[n][2])
     end
   end   

@@ -1,0 +1,12 @@
+.list-container
+
+  %p 
+  Reviews for cafe 
+  / = params[:name => cafe.name]
+
+  %ul{class: 'listings'}
+  - @reviews.each do |reviews|
+    %li
+      = review.post
+      %span{class: 'rating'}
+      = review.rating
