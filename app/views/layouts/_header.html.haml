@@ -6,5 +6,6 @@
     %h1 Green Leaf Reviews
 
   #user-links
-    %a{href: '#', id: 'add-cafe', class: 'button'}
-      Add +
+    = link_to 'Add +', new_cafe_path, :id => 'add-cafe'
+
+

@@ -1,0 +1,10 @@
+#cafe-container
+
+  %p Click a restaurant to see all its reviews and ratings.
+  %ul{id: 'cafes'}
+  - @cafes.each do |cafe|
+    %li
+      %a{href: '#'}
+        = cafe.name
+      %span{class: 'description'}
+        = cafe.description
