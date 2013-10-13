@@ -1,8 +1,9 @@
 .list-container
+  - if flash[:notice]
+    %p{:class => 'notice'}
+    = notice
   %p
-    = link_to 'Add new review', new_cafe_review_path, :id => 'add-review'
-  .notice
-  = notice
+    = link_to 'Add new review', new_cafe_review_path(@cafe)
   %p 
   Reviews for  
   = @cafe.name
@@ -12,4 +13,4 @@
     %li
       = review.post
       %span{class: 'rating'}
-      = review.rating
+        = review.rating

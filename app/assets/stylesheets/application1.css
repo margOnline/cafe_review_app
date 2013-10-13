@@ -7,10 +7,6 @@ a {
   text-decoration: none;
 }
 
-ul #cafes{
-  list-style: none;
-}
-
 a:hover, a:active {
   text-decoration: none;
   font-style: italic;
@@ -109,13 +105,25 @@ header #user-links #welcome-message {
 .list-container a{
   color:#69B734;
 }
-
-.list-container > .listings {
+.listings-container{
+  display:-webkit-flex;
+  display:flex;
+}
+.listings {
   list-style: none;
 }
 
-#cafes .description{
-  font-size: 14px;
+.description{
+  font-size: 12px;
+  -webkit-flex:1;
+  flex:1;
+}
+
+.average-rating{
+  font-size: 12px;
+  float: right;
+  -webkit-flex:2;
+  flex:2;
 }
 
 .cafe {
@@ -125,20 +133,9 @@ header #user-links #welcome-message {
   padding: 15px 10px;
   list-style: none;
 }
-.peep .post{
-  font-size: 14px;
-}
-.peep .source{
-  font-size: 16px;
-  font-weight: bold;
-}
-.peep .username{
-  font-size: 12px;
 
-}
-.peep .created{
-  float:right;
-  color:#999;
+.rating{
+  color:#1B8137; 
 }
 /* ************* NEW / UPDATE FORMS ************* */
 .form-wrap{
@@ -162,6 +159,9 @@ header #user-links #welcome-message {
   list-style: none;
   font-size: 14px;
   margin-bottom: 10px;
+}
+.field_with_errors{
+  border:1px solid #c00;
 }
 
 /* ************* FOOTER ************* */
@@ -195,7 +195,8 @@ footer, .push{
 }
 
 footer #copyright{
-  margin-top: -20px;
+  margin-top: 0px;
+  font-size: 12px;
   float:right;
   padding-right: 40px;
 }
