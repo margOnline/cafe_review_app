@@ -7,13 +7,14 @@ class ReviewsController < ApplicationController
   end
 
   def new
-    @review = Review.new(:cafe_id => @cafe.id)
+    @review = Review.new()
 
   end
 
   def create
     @review = Review.new(params[:review].permit(:cafe_id, :post, :rating))
-    if @review.save
+    @review.cafe = @cafe
+     if @review.save
       flash[:notice] = 'Review added'
       redirect_to(:action => 'index', :cafe_id => @cafe.id)
     else

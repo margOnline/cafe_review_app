@@ -4,7 +4,7 @@
   %ul{class: 'listings'}
   - @cafes.each do |cafe|
     %li
-      =link_to(cafe.name, {:controller => 'reviews', :action => 'index', :cafe_id => cafe.id}) 
+      =link_to(cafe.name, new_cafe_review_path(cafe)) 
       %span{class: 'description'}= cafe.description
       .average-rating
         Average rating: 
