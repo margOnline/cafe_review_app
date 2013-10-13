@@ -9,8 +9,9 @@
   = @cafe.name
 
   %ul{class: 'listings'}
-  - @reviews.each do |review|
-    %li
-      = review.post
-      %span{class: 'rating'}
-        = review.rating
+    - @reviews.each do |review|
+      %li
+        = review.post
+        %span{class: 'star'}
+          - review.rating.times do |rating|
+            &#9733

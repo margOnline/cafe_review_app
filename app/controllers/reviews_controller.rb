@@ -7,7 +7,7 @@ class ReviewsController < ApplicationController
   end
 
   def new
-    @review = Review.new()
+    @review = Review.new(:cafe_id => @cafe.id)
 
   end
 

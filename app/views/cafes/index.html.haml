@@ -4,14 +4,13 @@
   %ul{class: 'listings'}
     - @cafes.each do |cafe|
       %li
-      =link_to(cafe.name, new_cafe_review_path(cafe)) 
+      =link_to(cafe.name, cafe_reviews_path(cafe)) 
       %span{class: 'description'}= cafe.description
       .average-rating
         - average_rating = cafe.average_rating_for(cafe)
         - if average_rating == nil
           No reviews
         - else 
-          / Average rating: 
           %span{class: 'star'}
             - average_rating.to_i.times do |rating|
               &#9733

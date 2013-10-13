@@ -18,7 +18,8 @@ html, body{
 
 body {
   font-family: Helvetica, Arial, Sans-serif;
-  color:#666;
+/*  color:#666;*/
+  color:#1B8137;
 }
 
 .wrapper{
@@ -127,6 +128,9 @@ header #user-links #welcome-message {
 }
 .star {
   color:#e2aa00;
+  font-size: 12px;
+  letter-spacing: -0.15em;
+  float: right;
 }
 
 .cafe {
