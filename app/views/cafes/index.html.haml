@@ -7,7 +7,7 @@
       =link_to(cafe.name, cafe_reviews_path(cafe)) 
       %span{class: 'description'}= cafe.description
       .average-rating
-        - average_rating = cafe.average_rating_for(cafe)
+        - average_rating = cafe.average_rating
         - if average_rating == nil
           No reviews
         - else 

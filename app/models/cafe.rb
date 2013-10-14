@@ -5,8 +5,8 @@ class Cafe < ActiveRecord::Base
 
   has_many :reviews
 
-  def average_rating_for(cafe)
-    @average = Review.where(:cafe_id => cafe).average('rating')
+  def average_rating
+    reviews.average('rating')
   end
 
 end

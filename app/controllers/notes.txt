@@ -1,0 +1,3 @@
+notes.txt
+
+Heroku postgres-db = HEROKU_POSTGRESQL_NAVY_URL

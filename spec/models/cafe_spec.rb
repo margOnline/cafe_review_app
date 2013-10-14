@@ -3,8 +3,8 @@ require 'spec_helper'
 describe Cafe do
 
   let(:cafe){Cafe.new(id: 1, name: 'Jen\'s Bakery', description: 'Fresh from the oven')}
-  let(:review1){FactoryGirl.create(:review, :good_post, :rating_4)}
-  let(:review2){FactoryGirl.create(:review, :excellent_post, :rating_5)}
+  let!(:review1){FactoryGirl.create(:review, :good_post, :rating_4, cafe: cafe)}
+  let!(:review2){FactoryGirl.create(:review, :excellent_post, :rating_5, cafe: cafe)}
   
   it 'has a name' do
     expect(cafe.name).to eq 'Jen\'s Bakery'
@@ -29,6 +29,6 @@ describe Cafe do
   end
 
   it 'displays an average rating' do
-    expect(cafe.average_rating_for(1)).to eq 4.5
+    expect(cafe.average_rating).to eq 4.5
   end
 end
