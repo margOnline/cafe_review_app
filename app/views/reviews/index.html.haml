@@ -10,8 +10,8 @@
 
   %ul{class: 'listings'}
     - @reviews.each do |review|
-      %li
+      %li{class: 'post'}
         = review.post
-        %span{class: 'star'}
+        .star
           - review.rating.times do |rating|
             &#9733

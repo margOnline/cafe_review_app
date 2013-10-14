@@ -114,6 +114,12 @@ header #user-links #welcome-message {
   list-style: none;
 }
 
+.post{
+  color: #666;
+/*  font-size: 12px;*/
+
+}
+
 .description{
   font-size: 12px;
   -webkit-flex:1;
@@ -129,6 +135,7 @@ header #user-links #welcome-message {
 .star {
   color:#e2aa00;
   font-size: 12px;
+  display: inline-block;
   letter-spacing: -0.15em;
   float: right;
 }
