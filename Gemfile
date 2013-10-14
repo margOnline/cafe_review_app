@@ -44,9 +44,7 @@ group :test do
   gem 'haml-rails'
 end
 
-group :development do
-  gem 'haml-rails'
-end
+gem 'haml-rails'
 
 
 # Use ActiveModel has_secure_password
