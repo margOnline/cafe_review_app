@@ -26,7 +26,7 @@ body {
   min-height: 100%;
   height: auto !important;
   height: 100%;
-  margin: 0 auto -5em;
+  margin: 0 auto -4.5em;
 }
 
 /* ************* HEADER ************* */
@@ -174,10 +174,11 @@ header #user-links #welcome-message {
 /* ************* FOOTER ************* */
 footer{
   display:flex;
-  background-color: rgba(0,0,0,0.2);
+  border: 1px solid rgba(0,0,0,0.2);
+  color:#666;
 }
 footer a {
-  color:#005580;
+  color:#69B734;
 }
 
 footer > * {
@@ -198,7 +199,7 @@ footer p{
 }
 
 footer, .push{
-  height: 5em;
+  height: 4.5em;
 }
 
 footer #copyright{
