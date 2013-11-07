@@ -3,11 +3,11 @@
   %head
     %title Cafe Review App
     %meta{name: 'viewport', content: 'width=device-width, initial-scale=1.0'}
-
-    = stylesheet_link_tag 'application1.css', media: 'all' 
     = javascript_include_tag 'http://code.jquery.com/jquery-2.0.3.min.js'
-    / = javascript_include_tag 'application'
-
+    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true 
+    = javascript_include_tag "application", "data-turbolinks-track" => true 
+    = csrf_meta_tags 
+    = stylesheet_link_tag 'application1.css', media: 'all' 
   %body
     .wrapper
       = render 'layouts/header' 
@@ -16,8 +16,11 @@
         %p{class: 'notice'}= notice
           
       -if flash[:alert]
-        %p{class: 'alert'}= alert
-          
+        %p{class: 'alert'}= alert 
       = yield
       .push
       = render 'layouts/footer'
+      .show-resources
+        = yield
+    .push
+    = render 'layouts/footer'
