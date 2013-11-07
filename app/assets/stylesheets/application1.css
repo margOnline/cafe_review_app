@@ -32,6 +32,7 @@ body {
 /* ************* HEADER ************* */
 header {
   height: 40px;
+  width:100%;
   background-color: black;
   display: flex;
   padding:0 20px;
@@ -77,7 +78,7 @@ header #user-links #welcome-message {
   color:#69B734;
 }
 
-#add-cafe{
+.add-cafe, .add-table{
   background-color:#69B734;
   text-decoration: center;
   color:white;
@@ -87,11 +88,19 @@ header #user-links #welcome-message {
   padding: 3px 0;
   text-align: center;
 }
+.add-cafe{
+  width:70px;
+}
+
+.add-table{
+  width:110px;
+}
 
 /* ************* CONTENT LIST ************* */
 .list-container{
   background-color: white;
-  margin: 140px;
+  width:80%;
+  margin: 140px auto;
   box-shadow: 0 0 5px rgba(0,0,0,0.4);
   padding:10px;
 }
@@ -178,6 +187,18 @@ header #user-links #welcome-message {
   border:1px solid #c00;
 }
 
+/* ************* SHOW RESOURCES ************* */
+.show-resources{
+  width:60%;
+  margin: 80px auto;
+}
+.show-resources a {
+  margin-left: 10px;
+  color:#69B734;
+}
+.show-resources input[type="number"] { 
+  width:30px; 
+}
 /* ************* FOOTER ************* */
 footer{
   display:flex;
@@ -233,7 +254,7 @@ footer #copyright{
 .notice{
   text-align: center;
   width:25%;
-  margin: 65px auto 5px;
+  margin: 95px auto 5px;
   padding: 5px;
   background-color: #1B8137;
   border-radius:4px;

@@ -31,6 +31,8 @@ gem 'jbuilder', '~> 1.2'
 # To enable features such as static asset serving and logging on Heroku
 gem 'rails_12factor'
 
+gem 'bookable', '~>0.0.51'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
