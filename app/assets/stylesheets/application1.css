@@ -77,15 +77,22 @@ header #user-links #welcome-message {
   color:#69B734;
 }
 
-#add-cafe{
+#add-cafe, #add-table{
   background-color:#69B734;
   text-decoration: center;
   color:white;
-  width:70px;
   border:2px solid white;
   border-radius: 3px;
   padding: 3px 0;
   text-align: center;
+}
+
+#add-cafe{ 
+  width:70px;
+}
+
+#add-table{ 
+  width:120px;
 }
 
 /* ************* CONTENT LIST ************* */
@@ -177,6 +184,18 @@ header #user-links #welcome-message {
 .field_with_errors{
   border:1px solid #c00;
 }
+/* ************* SHOW RESOURCES ************* */
+.show-resources{
+  width:60%;
+  margin: 80px auto;
+}
+.show-resources a {
+  margin-left: 10px;
+  color:#69B734;
+}
+.show-resources input[type="number"] { 
+  width:30px; 
+}
 
 /* ************* FOOTER ************* */
 footer{
@@ -233,7 +252,7 @@ footer #copyright{
 .notice{
   text-align: center;
   width:25%;
-  margin: 65px auto 5px;
+  margin: 75px auto 5px;
   padding: 5px;
   background-color: #1B8137;
   border-radius:4px;
