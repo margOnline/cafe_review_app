@@ -5,17 +5,17 @@ class BookingsController < ApplicationController
   before_action :find_cafe
 
   def index
-    @bookings = Booking.where("table_id = ? AND end_time >= ?", @cafe.id, @table.id, Time.now).order(:start_time)
+    @bookings = Booking.where("table_id = ? AND end_time >= ?", @table.id, Time.now).order(:start_time)
     respond_with @bookings
   end
 
   def new
-    @booking = Booking.new(cafe_id: @cafe.id, table_id: @table.id)
-  end)
+    @booking = Booking.new(table_id: @table.id)
   end
 
+
   def create
-    @booking =  Booking.new(params[:booking].permit(:cafe_id, :table_id, :start_time, :length))
+    @booking =  Booking.new(params[:booking].permit(:table_id, :start_time, :length))
     @booking.table = @table
     if @booking.save
       redirect_to cafe_table_bookings_path(@cafe, @table, method: :get)
@@ -45,7 +45,7 @@ class BookingsController < ApplicationController
   def update
     @booking = Booking.find(params[:id])
 
-    if @booking.update(params[:booking].permit(:cafe_id, :table_id, :start_time, :length))
+    if @booking.update(params[:booking].permit(:table_id, :start_time, :length))
       flash[:notice] = 'Your booking was updated succesfully'
 
       if request.xhr?
@@ -63,7 +63,7 @@ class BookingsController < ApplicationController
   def save booking
     if @booking.save
         flash[:notice] = 'booking added'
-        redirect_to cafe_table_booking_path(@cafe, @table, @booking)
+        redirect_to cafe_table_booking_path(@table, @booking)
       else
         render 'new'
       end

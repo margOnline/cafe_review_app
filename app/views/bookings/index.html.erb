@@ -13,9 +13,9 @@
     <td>
       <%= (booking.calculate_end_time + 60).strftime('%e %b %Y %H:%M%p') %>
     </td>
-    <td><%= link_to "Delete", table_booking_path(@table, booking), data: { confirm: 'Are you sure?' }, method: :delete %>
+    <td><%= link_to "Delete", cafe_table_booking_path(@cafe, @table, booking), data: { confirm: 'Are you sure?' }, method: :delete %>
     </td>
-    <td><%= link_to "Edit", edit_table_booking_path(@table, booking) %>
+    <td><%= link_to "Edit", edit_cafe_table_booking_path(@cafe,@table, booking) %>
     </td>
   </tr>
   <% end %>
