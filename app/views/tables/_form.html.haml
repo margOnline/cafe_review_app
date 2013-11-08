@@ -1,5 +1,6 @@
-=form_for(:table, :url => {:action => 'create', :cafe_id => @cafe.id}) do |f|
-  = render 'errors'
-  = f.label 'name', 'Name'
-  = f.text_field 'name', placeholder: 'Name'
-  = f.submit 'Submit'
+.show-resources
+  =form_for(:table, :url => {:action => 'create', :cafe_id => @cafe.id}) do |f|
+    = render 'errors'
+    = f.label 'name', 'Name'
+    = f.text_field 'name', placeholder: 'Name'
+    = f.submit 'Submit'

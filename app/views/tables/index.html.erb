@@ -1,3 +1,4 @@
+<div class="show-resources">
 <% @tables.each do |table| %>
   <div class="table">
     <%= table.name %>
@@ -7,4 +8,4 @@
     <%= link_to "Add booking", new_table_booking_path(table) %>
   </div>
 <% end %>
-
+</div>
