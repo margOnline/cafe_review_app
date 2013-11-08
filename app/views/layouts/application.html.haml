@@ -17,9 +17,6 @@
           
       -if flash[:alert]
         %p{class: 'alert'}= alert 
-      = yield
-      .push
-      = render 'layouts/footer'
       .show-resources
         = yield
     .push

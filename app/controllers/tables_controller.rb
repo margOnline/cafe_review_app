@@ -1,18 +1,21 @@
 class TablesController < ApplicationController
 
+  before_action :find_cafe
+
   def index
-    @tables = Table.all
+    @tables = Table.all.where(:cafe_id => @cafe.id)
   end
 
   def new
-    @table = Table.new
+    @table = Table.new(:cafe_id => @cafe.id)
   end
 
   def create
-    @table = Table.create(table_params)
+    @table = Table.new(params[:table].permit(:cafe_id, :name))
+    @table.cafe = @cafe
+    name = @table.name
     if @table.save
-      name = @table.name
-      redirect_to tables_path
+      redirect_to cafe_tables_path
       flash[:notice] = "#{name} created"
     else
       render 'new'
@@ -23,7 +26,7 @@ class TablesController < ApplicationController
   def destroy
     @table = Table.find(params[:id])
     @table.destroy
-    redirect_to tables_path
+    redirect_to cafe_tables_path
   end
 
   def edit
@@ -32,10 +35,10 @@ class TablesController < ApplicationController
 
   def update
     @table = Table.find(params[:id])
-    @table.update table_params
+    @table.update cafe_table_params
     if @table.save
       flash[:notice] = "Your table was updated succesfully"
-      redirect_to root_path
+      redirect_to @cafe
     else
       render 'edit'
     end
@@ -46,5 +49,11 @@ class TablesController < ApplicationController
     def table_params
       params.require(:table).permit(:name, :delete)
     end
+
+    def find_cafe
+      if params[:cafe_id]
+        @cafe = Cafe.find_by_id(params[:cafe_id])
+      end
+  end
 
 end
